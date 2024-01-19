@@ -1,13 +1,15 @@
-import { Metadata } from "next";
 import Image from "next/image";
 import { Box, Container, Divider, Typography } from "@mui/material";
-import { Cookie } from "next/font/google";
+import localFont from "next/font/local";
 import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
 
 import "./global.css";
 
-const cookie = Cookie({ subsets: ["latin"], weight: "400" });
+const cookie = localFont({
+  src: "./cookie.ttf",
+  display: "swap",
+});
 
 export default function RootLayout({
   children,

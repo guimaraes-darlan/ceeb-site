@@ -1,9 +1,11 @@
 "use client";
 
 import { Container, Divider, Typography } from "@mui/material";
-import { Cookie } from "next/font/google";
+import localFont from "next/font/local";
 
-const cookie = Cookie({ subsets: ["latin"], weight: "400" });
+const cookie = localFont({
+  src: "../app/cookie.ttf",
+});
 
 export default function TitlePage({ title }: { title: string }) {
   return (
