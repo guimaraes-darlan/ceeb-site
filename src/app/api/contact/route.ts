@@ -1,0 +1,29 @@
+import { SendMailProps, ServiceMailService } from "../../../service/mail"
+import { templateEmail } from "../../../service/template";
+
+export async function POST(request: Request) {
+  console.log('request')
+  const formData = await request.json()
+  console.log(formData);
+
+  const html = templateEmail({
+    name: formData.name,
+    email: formData.email,
+    phone: formData.phone,
+    message: formData.message,
+    subject: formData.subject,
+  });
+
+  const mailProps: SendMailProps = {
+    to: 'darlanibira@gmail.com',
+    subject: `CEEB - Contato - ${formData.subject}`,
+    data: {
+      html,
+    }
+  }
+
+  const mail = new ServiceMailService();
+  await mail.send(mailProps)
+
+  return Response.json({ message: 'success' })
+}
