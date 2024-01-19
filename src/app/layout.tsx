@@ -9,6 +9,7 @@ import "./global.css";
 const cookie = localFont({
   src: "./cookie.ttf",
   display: "swap",
+  variable: "--cookie",
 });
 
 export default function RootLayout({
@@ -45,6 +46,7 @@ export default function RootLayout({
                 color="white"
                 align="center"
                 fontSize="xx-large"
+                fontFamily="--cookie"
                 className={cookie.className}
               >
                 Casa Espírita Eurípedes Barsanulpho
