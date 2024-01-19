@@ -23,7 +23,7 @@ export default function TitlePage({ title }: { title: string }) {
           className={cookie.className}
           color="gray"
         >
-          {title}
+          <span className={cookie.className}>{title}</span>
         </Typography>
         <Divider />
       </Container>
