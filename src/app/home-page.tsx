@@ -16,9 +16,7 @@ export default function HomePage() {
         Seja Bem Vindo!
       </Typography>
       <Container sx={{ height: "2rem" }} />
-      <Typography variant="h5" fontWeight="bold">
-        Amor e Caridade
-      </Typography>
+
       <Container sx={{ height: "0.5rem" }} />
       <Container
         sx={{
@@ -40,6 +38,7 @@ export default function HomePage() {
           variant="h6"
           fontWeight="bold"
           fontStyle="italic"
+          fontSize={14}
         >
           A Casa Espírita Eurípedes Barsanulpho informa a todos os seus
           frequentadores que as campanhas de doação são promovidas sempre pela

@@ -19,8 +19,8 @@ export default function EstudoPage() {
       <Image
         src="/images/pentateuco_kardec.webp"
         alt="estudo"
-        width="275"
-        height="300"
+        width={275 * 0.8}
+        height={300 * 0.8}
       />
       <Container sx={{ height: "1rem" }} />
       <Container
@@ -39,10 +39,9 @@ export default function EstudoPage() {
         </Typography>
         <Container sx={{ height: "1rem" }} />
         <Typography fontWeight="bold">
-          A Casa Eurípedes Barsanulpho tem diversos grupos de estudo em
-          andamento, bem como inscrições abertas para novas turmas. Para mais
-          informações, venha até a nossa casa em algum dos dias de Exposição
-          Doutrinária e iremos lhe apresentar as possibilidades existentes.
+          Para maiores informações sobre os grupos de estudos novos ou em
+          andamento, venha a nossa Casa nos dias de Exposição Doutrinária e
+          procure um trabalhador do dia.
         </Typography>
         <ConsulteHorarios />
       </Container>

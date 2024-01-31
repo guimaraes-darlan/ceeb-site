@@ -1,10 +1,11 @@
 import Image from "next/image";
-import { Box, Container, Divider, Typography } from "@mui/material";
+import { Box, Button, Container, Divider, Typography } from "@mui/material";
 import localFont from "next/font/local";
 import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
 
 import "./global.css";
+import { Menu } from "@mui/icons-material";
 
 const cookie = localFont({
   src: "./cookie.ttf",
@@ -45,6 +46,7 @@ export default function RootLayout({
                 color="white"
                 align="center"
                 fontSize="xx-large"
+                lineHeight="0.8"
               >
                 <span className={cookie.className}>
                   Casa Espírita Eurípedes Barsanulpho
@@ -54,10 +56,26 @@ export default function RootLayout({
                 Amor e Caridade
               </Typography>
             </Box>
-            <Navbar />
+            <Container sx={{ display: { xs: "none", md: "flex" } }}>
+              <Navbar />
+            </Container>
+            <Container
+              sx={{
+                display: { xs: "flex", md: "none" },
+                justifyContent: "center",
+              }}
+            >
+              <Button
+                variant="text"
+                startIcon={<Menu />}
+                sx={{ color: "white" }}
+              >
+                Menu
+              </Button>
+            </Container>
           </Box>
         </Container>
-        <Container sx={{ maxWidth: "900px", minHeight: "60vh" }}>
+        <Container sx={{ maxWidth: "900px", minHeight: "70vh" }}>
           <Divider />
           {children}
         </Container>

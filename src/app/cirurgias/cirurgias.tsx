@@ -23,14 +23,14 @@ export default function CirurgiasPage() {
           },
         }}
       >
-        <Typography>
+        <Typography align="justify">
           Os <b>procedimentos espirituais</b> têm por objetivo a realização de
           <b>cirurgias espirituais</b> visando auxiliar o tratamento
           psíquico-clínico-espiritual de todo aquele que apresentar estas
           necessidades.
         </Typography>
         <Container sx={{ height: "1rem" }} />
-        <Typography>
+        <Typography align="justify">
           Na <b>Casa Espírita Eurípedes Barsanulpho</b>, os procedimentos
           espirituais são realizados em sala própria e adequada (ambulatório),
           devidamente higienizada, através de um médium e de um auxiliar do sexo
@@ -39,12 +39,12 @@ export default function CirurgiasPage() {
         </Typography>
         <Container sx={{ height: "1rem" }} />
         <Typography fontWeight="bold">
-          As Cirurgias Espirituais são realizadas às segundas-feiras, mediante
-          agendamento prévio, o qual é feito durante o Atendimento Fraterno.
+          As Cirurgias Espirituais são realizadas mediante agendamento prévio
+          através do Atendimento Fraterno.
         </Typography>
         <Container sx={{ height: "1rem" }} />
         <Typography>
-          Para mais informações sobre o Atendimento Fraterno clicando{" "}
+          Para mais informações sobre o Atendimento Fraterno clique{" "}
           <Link href="/horarios">aqui</Link>
         </Typography>
         <ConsulteHorarios />

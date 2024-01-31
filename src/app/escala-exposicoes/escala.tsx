@@ -12,10 +12,33 @@ import {
 } from "@mui/material";
 import TitlePage from "../../components/title-page";
 
+interface Scale {
+  day: string;
+  name: string;
+  house: string;
+}
+
 export default function EscalaPage() {
   function createData(dayOfWeek: string, name: string, institution: string) {
     return { dayOfWeek, name, institution };
   }
+  const listScale: Scale[] = [
+    {
+      day: "01 Quinta",
+      name: "Renan",
+      house: "Casa Espírita Eurípedes Barsanulpho",
+    },
+    {
+      day: "03 Sábado",
+      name: "Estudo do Evangelho",
+      house: "Casa Espírita Eurípedes Barsanulpho",
+    },
+    {
+      day: "05 Sábado",
+      name: "Rosângela",
+      house: "Casa Espírita Eurípedes Barsanulpho",
+    },
+  ];
 
   const rows = [
     createData("Segunda", "Rosangela", "Casa Espírita Eurípedes Barsanulpho"),
@@ -30,25 +53,28 @@ export default function EscalaPage() {
     >
       <TitlePage title="Escala de Exposições Doutrinárias" />
       <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+        <Table
+          sx={{ minWidth: 650, borderCollapse: "collapse" }}
+          aria-label="simple table"
+        >
           <TableHead>
             <TableRow>
               <TableCell>Dia</TableCell>
-              <TableCell>Nome</TableCell>
+              <TableCell>Expositor</TableCell>
               <TableCell>Instituição</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
-            {rows.map((row) => (
+            {listScale.map((row) => (
               <TableRow
                 key={row.name}
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
               >
                 <TableCell component="th" scope="row">
-                  {row.dayOfWeek}
+                  {row.day}
                 </TableCell>
                 <TableCell>{row.name}</TableCell>
-                <TableCell>{row.institution}</TableCell>
+                <TableCell>{row.house}</TableCell>
               </TableRow>
             ))}
           </TableBody>

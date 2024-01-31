@@ -2,6 +2,7 @@
 
 import {
   Alert,
+  AlertColor,
   Box,
   Button,
   Container,
@@ -22,8 +23,12 @@ export default function ContatoPage() {
 
   const [open, setOpen] = useState(false);
 
+  const [messageAlert, setMessageAlert] = useState("");
+  const [severityAlert, setSeverityAlert] = useState<AlertColor>("error");
+
   const send = async () => {
     if (name === "" || phone === "" || subject === "" || message === "") {
+      setMessageAlert("Preencha os campos obrigatórios");
       setOpen(true);
       return;
     }
@@ -43,6 +48,15 @@ export default function ContatoPage() {
       body: JSON.stringify(emailMessage),
       method: "POST",
     });
+
+    if (response.ok) {
+      setMessageAlert("E-mail enviado com sucesso");
+      setSeverityAlert("success");
+    } else {
+      setMessageAlert("Não foi possível enviar a mensagem");
+      setSeverityAlert("error");
+    }
+    setOpen(true);
   };
 
   const handleClose = (event: SyntheticEvent | Event, reason?: string) => {
@@ -150,12 +164,12 @@ export default function ContatoPage() {
         </Grid>
         <Snackbar
           open={open}
-          autoHideDuration={4000}
+          autoHideDuration={3000}
           onClose={handleClose}
           anchorOrigin={{ vertical: "top", horizontal: "center" }}
         >
-          <Alert severity="error" variant="filled">
-            Preencha os campos obrigatórios
+          <Alert severity={severityAlert} variant="filled">
+            {messageAlert}
           </Alert>
         </Snackbar>
       </Container>

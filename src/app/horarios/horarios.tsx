@@ -103,10 +103,10 @@ export default function HorariosPage() {
             <Typography>Cirurgias Espirituais</Typography>
           </Grid>
           <Grid xs={4} borderTop={1} borderBottom={1}>
-            <Typography align="center">Segundas-Feiras</Typography>
+            <Typography align="center">Sábados</Typography>
           </Grid>
           <Grid xs={4} border={1}>
-            <Typography align="center">8:00 - 11:00</Typography>
+            <Typography align="center">14:00 - 17:00</Typography>
           </Grid>
 
           <Grid xs={12}>
@@ -118,7 +118,6 @@ export default function HorariosPage() {
               border: 1,
               display: "flex",
               alignItems: "center",
-
               justifyContent: "center",
             }}
           >
@@ -219,7 +218,7 @@ export default function HorariosPage() {
 
         <Container sx={{ height: "1rem" }} />
         <Typography align="center" variant="h6">
-          Mais informações: Pessoalmente no setor da Biblioteca.
+          Mais informações: Pessoalmente junto aos trabalhadores da casa.
         </Typography>
       </Container>
     </Box>

@@ -24,7 +24,7 @@ export default function DesobsessaoPage() {
           },
         }}
       >
-        <Typography>
+        <Typography align="justify">
           O Tratamento de Desobsessão tem por objetivo o tratamento espiritual
           de desobsessão dos pacientes encaminhados pelo atendimento fraterno,
           de forma presencial ou à distância, buscando, desta forma, auxiliar
@@ -34,12 +34,12 @@ export default function DesobsessaoPage() {
         <Container sx={{ height: "1rem" }} />
         <Typography fontWeight="bold">
           A Casa Espírita Eurípedes Barsanulpho realiza o Tratamento de
-          Desobsessão às sextas-feiras, mediante agendamento prévio, o qual é
-          feito durante o Atendimento Fraterno.
+          Desobsessão às sextas-feiras, mediante agendamento prévio realizado
+          através do Atendimento Fraterno.
         </Typography>
         <Container sx={{ height: "1rem" }} />
         <Typography>
-          Para mais informações sobre o Atendimento Fraterno clicando{" "}
+          Para mais informações sobre o Atendimento Fraterno clique{" "}
           <Link href="/horarios">aqui</Link>
         </Typography>
         <ConsulteHorarios />

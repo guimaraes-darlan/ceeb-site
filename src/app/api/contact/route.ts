@@ -2,9 +2,7 @@ import { SendMailProps, ServiceMailService } from "../../../service/mail"
 import { templateEmail } from "../../../service/template";
 
 export async function POST(request: Request) {
-  console.log('request')
   const formData = await request.json()
-  console.log(formData);
 
   const html = templateEmail({
     name: formData.name,

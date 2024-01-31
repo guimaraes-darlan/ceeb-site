@@ -9,7 +9,7 @@ export default function ConsulteHorarios() {
     <>
       <Container sx={{ height: "1rem" }} />
       <Typography fontWeight="bold" align="center">
-        Consulte nossa Tabela de Horários
+        Consulte nossos Horários
       </Typography>
       <Container
         sx={{

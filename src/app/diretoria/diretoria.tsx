@@ -24,9 +24,9 @@ export default function DiretoriaPage() {
     );
   };
   const items = [
-    generateItem("Rosângela Aparecida", "Presidente"),
-    generateItem("José Gomes", "Vice-Presidente"),
-    generateItem("Solange S. T. R.", "Secretária"),
+    generateItem("Rosângela A. T.", "Presidente"),
+    generateItem("José G. R.", "Vice-Presidente"),
+    generateItem("Letícia M. L.", "Secretária"),
     generateItem("Renan G. R.", "Tesoureiro"),
   ];
 
@@ -40,7 +40,7 @@ export default function DiretoriaPage() {
       <TitlePage title="Diretoria" />
       <Container sx={{ height: "3rem" }} />
       <Typography fontWeight="bold" variant="h6">
-        São membros da Diretoria da Casa Espírita Eurípedes Barsanulpho:
+        Membros da Diretoria da Casa Espírita Eurípedes Barsanulpho:
       </Typography>
       <Container sx={{ height: "1rem" }} />
 

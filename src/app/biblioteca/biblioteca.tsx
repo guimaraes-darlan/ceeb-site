@@ -17,8 +17,8 @@ export default function BibliotecaPage() {
       <Image
         src="/images/livro.jpeg"
         alt="atendimento fraterno"
-        width="600"
-        height="320"
+        width="300"
+        height="160"
       />
       <Container sx={{ height: "1rem" }} />
       <Container
@@ -29,7 +29,7 @@ export default function BibliotecaPage() {
           },
         }}
       >
-        <Typography>
+        <Typography align="justify">
           <p>
             As obras disponibilizadas na <b>Biblioteca</b> da{" "}
             <b>Casa Espírita Eurípedes Barsanulpho</b> para empréstimo aos
@@ -40,13 +40,12 @@ export default function BibliotecaPage() {
           <p>
             * Para que possam usufruir do empréstimo das obras, os
             frequentadores da Casa Espirita Eurípedes Barsanulpho devem se
-            <b>cadastrar</b> junto à biblioteca.
+            <b> cadastrar</b> junto à biblioteca.
           </p>
           <p>
-            * O <b>empréstimo</b> de livros e vídeos é inteiramente{" "}
-            <b>gratuito</b>, sendo o empréstimo de livros por um período de{" "}
-            <b>30 dias, renováveis</b> por mais 30 dias, e de uma semana para os
-            vídeos.
+            * O <b>empréstimo</b> de livros é inteiramente <b>gratuito</b>,
+            sendo o empréstimo de livros por um período de{" "}
+            <b>30 dias, renováveis</b> por mais 30 dias.
           </p>
           <p>
             <b>
@@ -55,9 +54,9 @@ export default function BibliotecaPage() {
             </b>
           </p>
           <p>
-            * Cada frequentador somente pode pegar para empréstimo um livro e/ou
-            um vídeo por vez, não sendo permitido o empréstimo de outra obra
-            enquanto não houver sido devolvida a que foi retirada anteriormente.
+            * Cada frequentador somente pode pegar para empréstimo um livro por
+            vez, não sendo permitido o empréstimo de outra obra enquanto não
+            houver sido devolvida a que foi retirada anteriormente.
           </p>
           <p>
             * O empréstimo de obras da biblioteca e a comercialização de obras
@@ -66,11 +65,11 @@ export default function BibliotecaPage() {
             esta atividade ser realizada durante a exposição doutrinária.
           </p>
           <p>
-            * Em caso de perda ou extravio de livro ou vídeo, aquele que o
-            retirou por empréstimo deverá fazer a doação de outro, de mesmo
-            título, autor e editora. Em caso da não existência do produto no
-            mercado, caberá ao dirigente do Departamento Doutrinário aprovar a
-            substituição por outro similar.
+            * Em caso de perda ou extravio de livro, aquele que o retirou por
+            empréstimo deverá fazer a doação de outro, de mesmo título, autor e
+            editora. Em caso da não existência do produto no mercado, caberá ao
+            dirigente do Departamento Doutrinário aprovar a substituição por
+            outro similar.
           </p>
         </Typography>
         <ConsulteHorarios />

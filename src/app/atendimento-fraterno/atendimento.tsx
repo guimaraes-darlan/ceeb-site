@@ -17,8 +17,8 @@ export default function AtendimentoPage() {
       <Image
         src="/images/atendimento.jpeg"
         alt="atendimento fraterno"
-        width="640"
-        height="360"
+        width="320"
+        height="180"
       />
       <Container sx={{ height: "1rem" }} />
       <Container
@@ -29,7 +29,7 @@ export default function AtendimentoPage() {
           },
         }}
       >
-        <Typography>
+        <Typography align="justify">
           O <b>Atendimento Fraterno</b> tem por objetivo acolher, auxiliar,
           orientar e encaminhar para procedimento espiritual ou tratamento de
           desobsessão, caso haja necessidade, ou promover a valorização da

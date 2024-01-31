@@ -28,6 +28,7 @@ export class ServiceMailService {
       });
       return { response, sendCode: this.getSendCode(response.response) };
     } catch (error) {
+      console.log(error);
       throw new Error();
     }
   }
