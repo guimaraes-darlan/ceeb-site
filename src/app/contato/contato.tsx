@@ -3,8 +3,10 @@
 import {
   Alert,
   AlertColor,
+  Backdrop,
   Box,
   Button,
+  CircularProgress,
   Container,
   Snackbar,
   TextField,
@@ -15,6 +17,8 @@ import Grid from "@mui/material/Unstable_Grid2/Grid2";
 import TitlePage from "../../components/title-page";
 
 export default function ContatoPage() {
+  const [loader, setLoader] = useState(false);
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -27,6 +31,7 @@ export default function ContatoPage() {
   const [severityAlert, setSeverityAlert] = useState<AlertColor>("error");
 
   const send = async () => {
+    setLoader(true);
     if (name === "" || phone === "" || subject === "" || message === "") {
       setMessageAlert("Preencha os campos obrigatórios");
       setOpen(true);
@@ -57,6 +62,7 @@ export default function ContatoPage() {
       setSeverityAlert("error");
     }
     setOpen(true);
+    setLoader(false);
   };
 
   const handleClose = (event: SyntheticEvent | Event, reason?: string) => {
@@ -73,6 +79,12 @@ export default function ContatoPage() {
       alignItems="center"
       flexDirection="column"
     >
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={loader}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
       <TitlePage title="Contato" />
 
       <Container sx={{ height: "1rem" }} />
