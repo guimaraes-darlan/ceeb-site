@@ -40,10 +40,6 @@ export default function EscalaPage() {
     },
   ];
 
-  const rows = [
-    createData("Segunda", "Rosangela", "Casa Espírita Eurípedes Barsanulpho"),
-  ];
-
   return (
     <Box
       display="flex"
@@ -53,15 +49,18 @@ export default function EscalaPage() {
     >
       <TitlePage title="Escala de Exposições Doutrinárias" />
       <TableContainer component={Paper}>
-        <Table
-          sx={{ minWidth: 650, borderCollapse: "collapse" }}
-          aria-label="simple table"
-        >
+        <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
             <TableRow>
-              <TableCell>Dia</TableCell>
-              <TableCell>Expositor</TableCell>
-              <TableCell>Instituição</TableCell>
+              <TableCell sx={{ fontWeight: "bold", fontSize: 14 }}>
+                Dia
+              </TableCell>
+              <TableCell sx={{ fontWeight: "bold", fontSize: 14 }}>
+                Expositor
+              </TableCell>
+              <TableCell sx={{ fontWeight: "bold", fontSize: 14 }}>
+                Instituição
+              </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
