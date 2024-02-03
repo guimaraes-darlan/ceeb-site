@@ -1,24 +1,30 @@
-import Image from "next/image";
 import { Box, Button, Container, Divider, Typography } from "@mui/material";
+import { ReactNode } from "react";
 import localFont from "next/font/local";
-import Navbar from "../layout/Navbar";
-import Footer from "../layout/Footer";
-
-import "./global.css";
+import Image from "next/image";
 import { Menu } from "@mui/icons-material";
+import Footer from "../../layout/Footer";
+import NavbarAdmin from "../../layout/NavbarAdmin";
+import { getServerAuthSession } from "../../nextauth/authOptions";
 
 const cookie = localFont({
-  src: "./cookie.ttf",
+  src: "../cookie.ttf",
   display: "swap",
 });
 
-export default function RootLayout({
+export default async function AdminLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
+  const authSession = await getServerAuthSession();
+
+  if (!authSession?.user) {
+    return <>Área Restrita</>;
+  }
+
   return (
-    <html lang="pt">
+    <html>
       <body>
         <Container sx={{ maxWidth: "900px" }}>
           <Box
@@ -56,9 +62,8 @@ export default function RootLayout({
                 Amor e Caridade
               </Typography>
             </Box>
-            <Container sx={{ display: { xs: "none", md: "flex" } }}>
-              <Navbar />
-            </Container>
+
+            <Container sx={{ display: { xs: "none", md: "flex" } }}></Container>
             <Container
               sx={{
                 display: { xs: "flex", md: "none" },
@@ -76,8 +81,19 @@ export default function RootLayout({
           </Box>
         </Container>
         <Container sx={{ maxWidth: "900px", minHeight: "70vh" }}>
-          <Divider />
-          {children}
+          <Box display="flex" flexDirection="row">
+            <Box
+              width={250}
+              sx={{
+                display: { xs: "none", md: "flex" },
+                paddingTop: "1em",
+                minHeight: "45rem",
+              }}
+            >
+              <NavbarAdmin />
+            </Box>
+            <Container maxWidth="lg">{children}</Container>
+          </Box>
         </Container>
         <Container sx={{ height: "1rem" }} />
         <Footer />

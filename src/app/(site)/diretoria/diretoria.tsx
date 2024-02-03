@@ -9,7 +9,7 @@ import {
   ListItemText,
   Typography,
 } from "@mui/material";
-import TitlePage from "../../components/title-page";
+import TitlePage from "../../../components/title-page";
 import { Circle } from "@mui/icons-material";
 
 export default function DiretoriaPage() {

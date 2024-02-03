@@ -1,8 +1,8 @@
 "use client";
 
 import { Box, Container, Typography } from "@mui/material";
-import TitlePage from "../../components/title-page";
-import ConsulteHorarios from "../../components/consulte-horarios";
+import TitlePage from "../../../components/title-page";
+import ConsulteHorarios from "../../../components/consulte-horarios";
 import Link from "next/link";
 
 export default function DesobsessaoPage() {

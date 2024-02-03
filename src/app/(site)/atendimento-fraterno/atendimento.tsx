@@ -1,9 +1,9 @@
 "use client";
 
 import { Box, Container, Typography } from "@mui/material";
-import TitlePage from "../../components/title-page";
+import TitlePage from "../../../components/title-page";
 import Image from "next/image";
-import ConsulteHorarios from "../../components/consulte-horarios";
+import ConsulteHorarios from "../../../components/consulte-horarios";
 
 export default function AtendimentoPage() {
   return (

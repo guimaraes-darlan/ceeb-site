@@ -10,7 +10,7 @@ import {
   TableHead,
   TableRow,
 } from "@mui/material";
-import TitlePage from "../../components/title-page";
+import TitlePage from "../../../components/title-page";
 
 interface Scale {
   day: string;

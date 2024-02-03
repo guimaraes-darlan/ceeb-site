@@ -1,7 +1,7 @@
 "use client";
 
 import { Box, Container, Typography } from "@mui/material";
-import TitlePage from "../../components/title-page";
+import TitlePage from "../../../components/title-page";
 import Grid from "@mui/material/Unstable_Grid2/Grid2";
 
 export default function HorariosPage() {

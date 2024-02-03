@@ -14,7 +14,7 @@ import {
 } from "@mui/material";
 import { SyntheticEvent, useState } from "react";
 import Grid from "@mui/material/Unstable_Grid2/Grid2";
-import TitlePage from "../../components/title-page";
+import TitlePage from "../../../components/title-page";
 
 export default function ContatoPage() {
   const [loader, setLoader] = useState(false);
