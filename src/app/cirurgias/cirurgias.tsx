@@ -25,7 +25,7 @@ export default function CirurgiasPage() {
       >
         <Typography align="justify">
           Os <b>procedimentos espirituais</b> têm por objetivo a realização de
-          <b>cirurgias espirituais</b> visando auxiliar o tratamento
+          <b> cirurgias espirituais</b> visando auxiliar o tratamento
           psíquico-clínico-espiritual de todo aquele que apresentar estas
           necessidades.
         </Typography>

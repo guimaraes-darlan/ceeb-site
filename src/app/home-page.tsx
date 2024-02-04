@@ -1,7 +1,8 @@
 "use client";
 
 import { Metadata } from "next";
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Container, Grid, Typography } from "@mui/material";
+import Image from "next/image";
 
 export default function HomePage() {
   return (
@@ -22,7 +23,7 @@ export default function HomePage() {
         sx={{
           width: {
             sx: "100%",
-            md: "70%",
+            md: "90%",
           },
         }}
       >
@@ -33,6 +34,26 @@ export default function HomePage() {
           lucrativos.
         </Typography>
         <Container sx={{ height: "4rem" }} />
+        <Grid container spacing={1}>
+          <Grid item xs={12} sm={6} md={6}>
+            <Image
+              src="/images/image-01.jpeg"
+              alt="img1"
+              width={128 * 3.5}
+              height={96 * 3.5}
+              style={{ paddingRight: "1rem" }}
+            />
+          </Grid>
+          <Grid item xs={12} sm={6} md={6}>
+            <Image
+              src="/images/image-02.jpeg"
+              alt="img1"
+              width={128 * 3.5}
+              height={96 * 3.5}
+            />
+          </Grid>
+        </Grid>
+
         <Typography
           align="center"
           variant="h6"
