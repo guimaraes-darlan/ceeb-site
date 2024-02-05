@@ -17,11 +17,11 @@ export default async function AdminLayout({
 }: {
   children: ReactNode;
 }) {
-  const authSession = await getServerAuthSession();
+  // const authSession = await getServerAuthSession();
 
-  if (!authSession?.user) {
-    return <>Área Restrita</>;
-  }
+  // if (!authSession?.user) {
+  //   return <>Área Restrita</>;
+  // }
 
   return (
     <html>
@@ -92,7 +92,9 @@ export default async function AdminLayout({
             >
               <NavbarAdmin />
             </Box>
-            <Container maxWidth="lg">{children}</Container>
+            <Container maxWidth="lg" sx={{ padding: "1rem" }}>
+              {children}
+            </Container>
           </Box>
         </Container>
         <Container sx={{ height: "1rem" }} />
