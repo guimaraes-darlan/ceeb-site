@@ -24,18 +24,16 @@ export default function CirurgiasPage() {
         }}
       >
         <Typography align="justify">
-          Os <b>procedimentos espirituais</b> têm por objetivo a realização de
-          <b> cirurgias espirituais</b> visando auxiliar o tratamento
+          As <b>Cirurgias Espirituais</b> têm por objetivo a realização de
+          procedimentos visando auxiliar o tratamento
           psíquico-clínico-espiritual de todo aquele que apresentar estas
           necessidades.
         </Typography>
         <Container sx={{ height: "1rem" }} />
         <Typography align="justify">
-          Na <b>Casa Espírita Eurípedes Barsanulpho</b>, os procedimentos
-          espirituais são realizados em sala própria e adequada (ambulatório),
-          devidamente higienizada, através de um médium e de um auxiliar do sexo
-          masculino para os procedimentos em pacientes do mesmo sexo e do sexo
-          feminino para os procedimentos em pacientes do mesmo sexo.
+          Na Casa Espírita Eurípedes Barsanulpho, os procedimentos espirituais
+          são realizados em sala própria (ambulatório), devidamente higienizada,
+          através de um médium e de um auxiliar.
         </Typography>
         <Container sx={{ height: "1rem" }} />
         <Typography fontWeight="bold">

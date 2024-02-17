@@ -25,18 +25,15 @@ export default function DesobsessaoPage() {
         }}
       >
         <Typography align="justify">
-          O Tratamento de Desobsessão tem por objetivo o tratamento espiritual
-          de desobsessão dos pacientes encaminhados pelo atendimento fraterno,
-          de forma presencial ou à distância, buscando, desta forma, auxiliar
-          encarnados e desencarnados envolvidos em processo de reajuste
-          espiritual.
-        </Typography>
-        <Container sx={{ height: "1rem" }} />
-        <Typography fontWeight="bold">
-          A Casa Espírita Eurípedes Barsanulpho realiza o Tratamento de
+          O <b>Tratamento de Desobsessão</b> tem por objetivo o tratamento
+          espiritual, de forma presencial ou à distância, e o auxílio aos
+          encarnados e desencarnados envolvidos em processos de reajuste
+          espiritual. <br />
+          <br />A Casa Espírita Eurípedes Barsanulpho realiza o Tratamento de
           Desobsessão às sextas-feiras, mediante agendamento prévio realizado
           através do Atendimento Fraterno.
         </Typography>
+
         <Container sx={{ height: "1rem" }} />
         <Typography>
           Para mais informações sobre o Atendimento Fraterno clique{" "}

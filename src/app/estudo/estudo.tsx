@@ -31,11 +31,14 @@ export default function EstudoPage() {
           },
         }}
       >
-        <Typography>
-          O Estudo da Doutrina Espírita visa proporcionar o conhecimento amplo
-          da Doutrina Espírita codificada por Allan Kardec aos tarefeiros da
-          Casa Espírita Eurípedes Barsanulpho, frequentadores e interessados, de
-          forma regular, metódica, contínua, séria e sistematizada.
+        <Typography align="justify">
+          O Estudo da Doutrina Espírita é aberto ao público e visa proporcionar
+          o conhecimento amplo da Doutrina Espírita codificada por Allan Kardec
+          de forma regular, metódica, contínua, séria, sistematizada e
+          totalmente gratuita. <br />
+          Para maiores informações sobre os grupos de estudos novos ou em
+          andamento, venha a nossa Casa nos dias de Exposição Doutrinária e
+          procure um trabalhador do dia.
         </Typography>
         <Container sx={{ height: "1rem" }} />
         <Typography fontWeight="bold">
