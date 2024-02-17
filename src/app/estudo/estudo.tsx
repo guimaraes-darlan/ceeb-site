@@ -17,10 +17,10 @@ export default function EstudoPage() {
     >
       <TitlePage title="Estudo da Doutrina Espírita" />
       <Image
-        src="/images/pentateuco_kardec.webp"
+        src="/images/pentateuco.webp"
         alt="estudo"
-        width={275 * 0.8}
-        height={300 * 0.8}
+        width={860 * 0.8}
+        height={225 * 0.8}
       />
       <Container sx={{ height: "1rem" }} />
       <Container
