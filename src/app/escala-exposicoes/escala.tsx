@@ -9,6 +9,7 @@ import {
   TableContainer,
   TableHead,
   TableRow,
+  Typography,
 } from "@mui/material";
 import TitlePage from "../../components/title-page";
 
@@ -24,18 +25,68 @@ export default function EscalaPage() {
   }
   const listScale: Scale[] = [
     {
-      day: "01 Quinta",
-      name: "Renan",
-      house: "Casa Espírita Eurípedes Barsanulpho",
-    },
-    {
-      day: "03 Sábado",
+      day: "02 Sábado",
       name: "Estudo do Evangelho",
       house: "Casa Espírita Eurípedes Barsanulpho",
     },
     {
-      day: "05 Sábado",
+      day: "04 Segunda",
       name: "Rosângela",
+      house: "Casa Espírita Eurípedes Barsanulpho",
+    },
+    {
+      day: "07 Quinta",
+      name: "Cláudio Luiz Mota",
+      house: "C. E. Portal da Vida",
+    },
+    {
+      day: "09 Sábado",
+      name: "Estudo do Evangelho",
+      house: "Casa Espírita Eurípedes Barsanulpho",
+    },
+    {
+      day: "11 Segunda",
+      name: "Nilson Góes",
+      house: " - ",
+    },
+    {
+      day: "14 Quinta",
+      name: "Letícia",
+      house: "Casa Espírita Eurípedes Barsanulpho",
+    },
+    {
+      day: "16 Sábado",
+      name: "Estudo do Evangelho",
+      house: "Casa Espírita Eurípedes Barsanulpho",
+    },
+    {
+      day: "18 Segunda",
+      name: "Benício Góes",
+      house: "C. E. Seara do Amor",
+    },
+    {
+      day: "21 Quinta",
+      name: "Edison Victor Faccin",
+      house: "C. E. Manoel Francisco da Luz",
+    },
+    {
+      day: "23 Sábado",
+      name: "Estudo do Evangelho",
+      house: "Casa Espírita Eurípedes Barsanulpho",
+    },
+    {
+      day: "25 Segunda",
+      name: "Sílvia Silva",
+      house: "C. E. Paulo de Tarso",
+    },
+    {
+      day: "28 Quinta",
+      name: "Renan",
+      house: "Casa Espírita Eurípedes Barsanulpho",
+    },
+    {
+      day: "23 Sábado",
+      name: "Estudo do Evangelho",
       house: "Casa Espírita Eurípedes Barsanulpho",
     },
   ];
@@ -48,6 +99,9 @@ export default function EscalaPage() {
       flexDirection="column"
     >
       <TitlePage title="Escala de Exposições Doutrinárias" />
+      <Typography variant="h6">
+        <strong>Março de 2024</strong>
+      </Typography>
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
