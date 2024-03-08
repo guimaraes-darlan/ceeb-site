@@ -41,7 +41,7 @@ export default function HomePage() {
         <Grid container spacing={1}>
           <Grid item xs={12} sm={6} md={6}>
             <Image
-              src="/images/image-01.jpeg"
+              src="/images/frente.jpg"
               alt="img1"
               width={128 * 3.5}
               height={96 * 3.5}
@@ -50,7 +50,7 @@ export default function HomePage() {
           </Grid>
           <Grid item xs={12} sm={6} md={6}>
             <Image
-              src="/images/image-02.jpeg"
+              src="/images/image-01.jpeg"
               alt="img1"
               width={128 * 3.5}
               height={96 * 3.5}
