@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, useState } from "react";
+import { ReactNode, Suspense, useState } from "react";
 import { Box, Button, Container, Divider, Typography } from "@mui/material";
 import localFont from "next/font/local";
 import Image from "next/image";
@@ -56,7 +56,9 @@ export default function LayoutPage({ children }: { children: ReactNode }) {
             </Typography>
           </Box>
           <Container sx={{ display: { xs: "none", md: "flex" } }}>
-            <Navbar />
+            <Suspense>
+              <Navbar />
+            </Suspense>
           </Container>
           <Container
             sx={{
