@@ -1,4 +1,6 @@
-import { Box, Container, Typography } from "@mui/material";
+"use client";
+
+import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 import TitlePage from "../../components/title-page";
 
