@@ -1,6 +1,3 @@
-"use client";
-
-import { Metadata } from "next";
 import { Box, Container, Grid, Typography } from "@mui/material";
 import Image from "next/image";
 

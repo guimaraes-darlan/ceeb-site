@@ -1,5 +1,3 @@
-"use client";
-
 import { Box, Container, Typography } from "@mui/material";
 import Image from "next/image";
 import TitlePage from "../../components/title-page";

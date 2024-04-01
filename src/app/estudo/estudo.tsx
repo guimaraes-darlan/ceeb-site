@@ -1,10 +1,6 @@
-"use client";
-
-import { Box, Button, Container, Typography } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import TitlePage from "../../components/title-page";
 import Image from "next/image";
-import { AccessTime } from "@mui/icons-material";
-import Link from "next/link";
 import ConsulteHorarios from "../../components/consulte-horarios";
 
 export default function EstudoPage() {

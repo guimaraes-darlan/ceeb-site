@@ -1,5 +1,3 @@
-"use client";
-
 import { Box, Divider, Typography } from "@mui/material";
 import Link from "next/link";
 
