@@ -118,6 +118,10 @@ function Navbar() {
           <Link style={styleLinkItem} href="/biblioteca">
             <MenuItem onClick={handleClose2}>Biblioteca</MenuItem>
           </Link>
+          <Divider />
+          <Link style={styleLinkItem} href="/campanhas">
+            <MenuItem onClick={handleClose2}>Campanhas</MenuItem>
+          </Link>
         </Menu>
         <Link style={styleLink} href="/horarios">
           <Button key="home" sx={{ my: 2, color: "white", display: "block" }}>

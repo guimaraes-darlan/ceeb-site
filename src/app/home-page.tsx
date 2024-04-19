@@ -1,5 +1,6 @@
-import { Box, Container, Grid, Typography } from "@mui/material";
+import { Box, Button, Container, Grid, Typography } from "@mui/material";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function HomePage() {
   return (
@@ -34,6 +35,25 @@ export default function HomePage() {
           Conheça as nossas atividades e horários de funcionamento e seja muito
           bem-vindo
         </Typography>
+        <Container sx={{ height: "2rem" }} />
+        <Container
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            paddingTop: "1rem",
+          }}
+        >
+          <Link href="/campanhas">
+            <Button variant="text">
+              <Link
+                style={{ textDecoration: "none", color: "#4169E1" }}
+                href="/campanhas"
+              >
+                Campanhas
+              </Link>
+            </Button>
+          </Link>
+        </Container>
         <Container sx={{ height: "2rem" }} />
         <Grid container spacing={1}>
           <Grid item xs={12} sm={6} md={6}>
