@@ -39,6 +39,9 @@ export default function CampanhasPage() {
             de longa permanência de idosos, fundada em 1988 e abriga atualmente
             cerca de 40 idosos
           </Typography>
+          <Typography sx={{ marginTop: "1rem", fontWeight: "bold" }}>
+            Estamos arrecadando:
+          </Typography>
         </Box>
         <Typography>- Leite</Typography>
         <Typography>- Café</Typography>

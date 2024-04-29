@@ -24,15 +24,13 @@ export default function HomePage() {
         }}
       >
         <Typography align="center" variant="h6">
-          <p>
-            A <strong>Casa Espírita Eurípedes Barsanulpho</strong>, fundada em
-            29 de agosto de 2014, é uma organização religiosa, de caráter
-            educacional, cultural, de assistência social, filantrópica, sem fins
-            lucrativos, e tem por objetivos a prática da caridade espiritual,
-            moral e material por todos os meios ao seu alcance e dentro dos
-            princípios da Doutrina Espírita codificada por Allan Kardec.
-          </p>
-          Conheça as nossas atividades e horários de funcionamento e seja muito
+          A <strong>Casa Espírita Eurípedes Barsanulpho</strong>, fundada em 29
+          de agosto de 2014, é uma organização religiosa, de caráter
+          educacional, cultural, de assistência social, filantrópica, sem fins
+          lucrativos, e tem por objetivos a prática da caridade espiritual,
+          moral e material por todos os meios ao seu alcance e dentro dos
+          princípios da Doutrina Espírita codificada por Allan Kardec. Conheça
+          as nossas atividades e horários de funcionamento e seja muito
           bem-vindo
         </Typography>
         <Container sx={{ height: "2rem" }} />
@@ -44,14 +42,12 @@ export default function HomePage() {
           }}
         >
           <Link href="/campanhas">
-            <Button variant="text">
-              <Link
-                style={{ textDecoration: "none", color: "#4169E1" }}
-                href="/campanhas"
-              >
-                Campanhas
-              </Link>
-            </Button>
+            <Link
+              style={{ textDecoration: "none", color: "#4169E1" }}
+              href="/campanhas"
+            >
+              <Typography variant="h6">Campanhas</Typography>
+            </Link>
           </Link>
         </Container>
         <Container sx={{ height: "2rem" }} />
