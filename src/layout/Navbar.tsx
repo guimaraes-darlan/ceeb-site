@@ -105,6 +105,10 @@ function Navbar() {
             <MenuItem onClick={handleClose2}>Cirurgias Espirituais</MenuItem>
           </Link>
           <Divider />
+          <Link style={styleLinkItem} href="/equilibrio">
+            <MenuItem onClick={handleClose2}>Equilíbrio Espiritual</MenuItem>
+          </Link>
+          <Divider />
           <Link style={styleLinkItem} href="/desobsessao">
             <MenuItem onClick={handleClose2}>
               Tratamento de Desobsessão
@@ -113,6 +117,10 @@ function Navbar() {
           <Divider />
           <Link style={styleLinkItem} href="/evangelizacao">
             <MenuItem onClick={handleClose2}>Evangelização</MenuItem>
+          </Link>
+          <Divider />
+          <Link style={styleLinkItem} href="/irradiacao">
+            <MenuItem onClick={handleClose2}>Irradiação</MenuItem>
           </Link>
           <Divider />
           <Link style={styleLinkItem} href="/biblioteca">
