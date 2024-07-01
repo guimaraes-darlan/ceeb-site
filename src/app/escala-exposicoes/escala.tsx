@@ -25,68 +25,68 @@ export default function EscalaPage() {
   }
   const listScale: Scale[] = [
     {
-      day: "01 Sábado",
-      name: "Estudo do Evangelho",
-      house: "Casa Espírita Eurípedes Barsanulpho",
-    },
-    {
-      day: "03 Segunda",
-      name: "Renan",
-      house: "Casa Espírita Eurípedes Barsanulpho",
-    },
-    {
-      day: "06 Quinta",
-      name: "Rita de Cássia Luz Veríssimo",
-      house: "GE A Caminho da Luz",
-    },
-    {
-      day: "08 Sábado",
-      name: "Estudo do Evangelho",
-      house: "Casa Espírita Eurípedes Barsanulpho",
-    },
-    {
-      day: "10 Segunda",
-      name: "Augusto César Valença Motta",
-      house: "CE Paulo de Tarso",
-    },
-    {
-      day: "13 Quinta",
-      name: "Nilton Aquino",
-      house: "CE Manoel Francisco da Luz",
-    },
-    {
-      day: "15 Sábado",
-      name: "Estudo do Evangelho",
-      house: "Casa Espírita Eurípedes Barsanulpho",
-    },
-    {
-      day: "17 Segunda",
+      day: "01 Segunda",
       name: "Rosângela",
       house: "Casa Espírita Eurípedes Barsanulpho",
     },
     {
-      day: "20 Quinta",
+      day: "04 Quinta",
+      name: "Renan",
+      house: "Casa Espírita Eurípedes Barsanulpho",
+    },
+    {
+      day: "06 Sábado",
+      name: "Estudo do Evangelho",
+      house: "Casa Espírita Eurípedes Barsanulpho",
+    },
+    {
+      day: "08 Segunda",
+      name: "Ildenes Pereira",
+      house: "CE A Caminho do Divino Mestre",
+    },
+    {
+      day: "11 Quinta",
+      name: "Cláudio Luiz Mota",
+      house: "CE Portal da Vida",
+    },
+    {
+      day: "13 Sábado",
+      name: "Estudo do Evangelho",
+      house: "Casa Espírita Eurípedes Barsanulpho",
+    },
+    {
+      day: "15 Segunda",
+      name: "Walmir Matos",
+      house: "CE Seara dos Pobres",
+    },
+    {
+      day: "18 Quinta",
+      name: "Márcia Goes",
+      house: "CE Portal da Vida",
+    },
+    {
+      day: "20 Sábado",
+      name: "Estudo do Evangelho",
+      house: "Casa Espírita Eurípedes Barsanulpho",
+    },
+    {
+      day: "22 Segunda",
+      name: "Nilson Goes",
+      house: "-",
+    },
+    {
+      day: "25 Quinta",
+      name: "Inara Schultz",
+      house: "SE Tereza de Jesus",
+    },
+    {
+      day: "27 Sábado",
+      name: "Estudo do Evangelho",
+      house: "Casa Espírita Eurípedes Barsanulpho",
+    },
+    {
+      day: "29 Segunda",
       name: "Letícia",
-      house: "Casa Espírita Eurípedes Barsanulpho",
-    },
-    {
-      day: "22 Sábado",
-      name: "Estudo do Evangelho",
-      house: "Casa Espírita Eurípedes Barsanulpho",
-    },
-    {
-      day: "24 Segunda",
-      name: "Benício Goes",
-      house: "CE Seara do Amor",
-    },
-    {
-      day: "27 Quinta",
-      name: "Andreia Martins Cândido",
-      house: "CE Caminho do Amor",
-    },
-    {
-      day: "29 Sábado",
-      name: "Estudo do Evangelho",
       house: "Casa Espírita Eurípedes Barsanulpho",
     },
   ];
@@ -100,7 +100,7 @@ export default function EscalaPage() {
     >
       <TitlePage title="Escala de Exposições Doutrinárias" />
       <Typography variant="h5">
-        <strong>Junho de 2024</strong>
+        <strong>Julho de 2024</strong>
       </Typography>
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
