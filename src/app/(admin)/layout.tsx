@@ -5,7 +5,8 @@ import Image from "next/image";
 import { Menu } from "@mui/icons-material";
 import Footer from "../../layout/Footer";
 import NavbarAdmin from "../../layout/NavbarAdmin";
-import { getServerAuthSession } from "../../nextauth/authOptions";
+import { auth } from "../../../auth";
+import Restricted from "./restricted";
 
 const cookie = localFont({
   src: "../cookie.ttf",
@@ -17,11 +18,17 @@ export default async function AdminLayout({
 }: {
   children: ReactNode;
 }) {
-  // const authSession = await getServerAuthSession();
+  const session = await auth();
 
-  // if (!authSession?.user) {
-  //   return <>Área Restrita</>;
-  // }
+  if (!session) {
+    return (
+      <html>
+        <body>
+          <Restricted />
+        </body>
+      </html>
+    );
+  }
 
   return (
     <html>

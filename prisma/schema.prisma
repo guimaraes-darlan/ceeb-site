@@ -1,135 +1,96 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "postgres"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
-model User {
-  id        String   @id @default(uuid())
-  name      String
-  username  String
-  email     String
-  password  String
-  createdAt DateTime @default(now()) @map(name: "created_at")
-  updatedAt DateTime @updatedAt @map(name: "updated_at")
-
-  @@map("users")
+model Category {
+  id         String    @id
+  name       String
+  created_at DateTime  @default(now())
+  updated_at DateTime
+  sync       Boolean   @default(false)
+  Invoice    Invoice[]
 }
 
 model Configuration {
-  id           String   @id @default(uuid())
+  id           String   @id
   penaltyValue Decimal
   lendingDays  Int
-  createdAt    DateTime @default(now()) @map(name: "created_at")
-  updatedAt    DateTime @updatedAt @map(name: "updated_at")
-
-  @@map("configurations")
+  created_at   DateTime @default(now())
+  updated_at   DateTime
 }
 
-model Category {
-  id        String    @id @default(uuid())
-  name      String
-  sync      Boolean   @default(false)
-  createdAt DateTime  @default(now()) @map(name: "created_at")
-  updatedAt DateTime  @updatedAt @map(name: "updated_at")
-  Invoice   Invoice[]
-
-  @@map("categories")
-}
-
-model Book {
-  id        String    @id @default(uuid())
-  name      String
-  author    String
-  writer    String?
-  code      String
-  edition   String?
-  borrow    Boolean   @default(false)
-  sync      Boolean   @default(false)
-  createdAt DateTime  @default(now()) @map(name: "created_at")
-  updatedAt DateTime  @updatedAt @map(name: "updated_at")
-  Lending   Lending[]
-
-  @@map("books")
-}
-
-model Reader {
-  id        String    @id @default(uuid())
-  name      String
-  phone     String?
-  address   String?
-  city      String?
-  email     String?
-  openLoan  Boolean   @default(false)
-  sync      Boolean   @default(false)
-  createdAt DateTime  @default(now()) @map(name: "created_at")
-  updatedAt DateTime  @updatedAt @map(name: "updated_at")
-  Lending   Lending[]
-
-  @@map("readers")
+model Invoice {
+  id          String   @id
+  date        DateTime
+  quantity    Decimal
+  value       Decimal
+  credit      Boolean  @default(false)
+  paymentType String
+  categoryId  String
+  lendingId   String?
+  created_at  DateTime @default(now())
+  updated_at  DateTime
+  sync        Boolean  @default(false)
+  Category    Category @relation(fields: [categoryId], references: [id])
+  Lending     Lending? @relation(fields: [lendingId], references: [id])
 }
 
 model Lending {
-  id           String    @id @default(uuid())
-  book         Book      @relation(fields: [bookId], references: [id])
+  id           String    @id
   bookId       String
-  reader       Reader    @relation(fields: [readerId], references: [id])
   readerId     String
   date         DateTime
   expectedDate DateTime
   deliveryDate DateTime?
   code         String?
   returned     Boolean   @default(false)
+  created_at   DateTime  @default(now())
+  updated_at   DateTime
   sync         Boolean   @default(false)
-  createdAt    DateTime  @default(now()) @map(name: "created_at")
-  updatedAt    DateTime  @updatedAt @map(name: "updated_at")
   Invoice      Invoice[]
-
-  @@map("lendings")
+  books        books     @relation(fields: [bookId], references: [id])
+  readers      readers   @relation(fields: [readerId], references: [id])
 }
 
-model Invoice {
-  id          String   @id @default(uuid())
-  date        DateTime
-  quantity    Decimal
-  value       Decimal
-  credit      Boolean  @default(false)
-  paymentType String
-  category    Category @relation(fields: [categoryId], references: [id])
-  categoryId  String
-  lending     Lending? @relation(fields: [lendingId], references: [id])
-  lendingId   String?
-  sync        Boolean  @default(false)
-  createdAt   DateTime @default(now()) @map(name: "created_at")
-  updatedAt   DateTime @updatedAt @map(name: "updated_at")
-
-  @@map("invoices")
+model User {
+  id         String   @id
+  name       String
+  username   String
+  email      String
+  password   String
+  created_at DateTime @default(now())
+  updated_at DateTime
 }
 
-model LectureScale {
-  id        String   @id @default(uuid())
-  date      DateTime @db.Date
-  name      String
-  foudation String
-  createdAt DateTime @default(now()) @map(name: "created_at")
-  updatedAt DateTime @updatedAt @map(name: "updated_at")
-
-  @@map("lecture_scales")
+model books {
+  id         String    @id
+  name       String
+  author     String
+  writer     String?
+  code       String
+  borrow     Boolean   @default(false)
+  created_at DateTime  @default(now())
+  updated_at DateTime
+  edition    String?
+  sync       Boolean   @default(false)
+  Lending    Lending[]
 }
 
-model Ephemeris {
-  id          String   @id @default(uuid())
-  date        DateTime @db.Date
-  month       Int
-  description String
-  createdAt   DateTime @default(now()) @map(name: "created_at")
-  updatedAt   DateTime @updatedAt @map(name: "updated_at")
-
-  @@map("ephemeris")
+model readers {
+  id         String    @id
+  name       String
+  phone      String?
+  address    String?
+  city       String?
+  openLoan   Boolean   @default(false)
+  created_at DateTime  @default(now())
+  updated_at DateTime
+  email      String?
+  sync       Boolean   @default(false)
+  Lending    Lending[]
 }

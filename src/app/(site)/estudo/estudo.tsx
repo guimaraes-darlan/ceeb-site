@@ -1,10 +1,8 @@
 "use client";
 
-import { Box, Button, Container, Typography } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import TitlePage from "../../../components/title-page";
 import Image from "next/image";
-import { AccessTime } from "@mui/icons-material";
-import Link from "next/link";
 import ConsulteHorarios from "../../../components/consulte-horarios";
 
 export default function EstudoPage() {
@@ -17,10 +15,10 @@ export default function EstudoPage() {
     >
       <TitlePage title="Estudo da Doutrina Espírita" />
       <Image
-        src="/images/pentateuco_kardec.webp"
+        src="/images/pentateuco.webp"
         alt="estudo"
-        width={275 * 0.8}
-        height={300 * 0.8}
+        width={860 * 0.8}
+        height={225 * 0.8}
       />
       <Container sx={{ height: "1rem" }} />
       <Container
@@ -31,11 +29,14 @@ export default function EstudoPage() {
           },
         }}
       >
-        <Typography>
-          O Estudo da Doutrina Espírita visa proporcionar o conhecimento amplo
-          da Doutrina Espírita codificada por Allan Kardec aos tarefeiros da
-          Casa Espírita Eurípedes Barsanulpho, frequentadores e interessados, de
-          forma regular, metódica, contínua, séria e sistematizada.
+        <Typography align="justify">
+          O Estudo da Doutrina Espírita é aberto ao público e visa proporcionar
+          o conhecimento amplo da Doutrina Espírita codificada por Allan Kardec
+          de forma regular, metódica, contínua, séria, sistematizada e
+          totalmente gratuita. <br />
+          Para maiores informações sobre os grupos de estudos novos ou em
+          andamento, venha a nossa Casa nos dias de Exposição Doutrinária e
+          procure um trabalhador do dia.
         </Typography>
         <Container sx={{ height: "1rem" }} />
         <Typography fontWeight="bold">

@@ -30,13 +30,15 @@ export default function AtendimentoPage() {
         }}
       >
         <Typography align="justify">
-          O <b>Atendimento Fraterno</b> tem por objetivo acolher, auxiliar,
-          orientar e encaminhar para procedimento espiritual ou tratamento de
-          desobsessão, caso haja necessidade, ou promover a valorização da
-          autoestima através do diálogo fraterno, segundo os princípios da
-          Doutrina Espírita codificada por Allan Kardec e o Evangelho de Jesus,
-          podendo, em determinadas situações, sugerir encaminhamento para
-          participar das atividades da Casa.
+          O <b>Atendimento Fraterno</b> tem como objetivo acolher, auxiliar,
+          orientar e encaminhar, quando necessário, para os tratamentos
+          oferecidos pela Casa, por meio de um diálogo fraterno embasado nos
+          princípios da Doutrina Espírita codificada por Allan Kardec e no
+          Evangelho de Jesus.
+          <br />
+          Na Casa Espírita Eurípedes Barsanulpho, o Atendimento Fraterno é feito
+          nos dias de exposições doutrinárias, ao término das mesmas, em sala
+          reservada.
         </Typography>
         <Container sx={{ height: "1rem" }} />
         <Typography fontWeight="bold" align="center">

@@ -44,13 +44,13 @@ export const templateEmail = ({ name, email, phone, subject, message }: EmailPro
           <tr>
             <td>
               <table width="95%" border="0" align="center" cellpadding="0" cellspacing="0"
-                style="max-width:670px;background:#fff; border-radius:3px; text-align:center;-webkit-box-shadow:0 6px 18px 0 rgba(0,0,0,.06);-moz-box-shadow:0 6px 18px 0 rgba(0,0,0,.06);box-shadow:0 6px 18px 0 rgba(0,0,0,.06);">
+                style="max-width:670px;background:#fff; border-radius:3px; -webkit-box-shadow:0 6px 18px 0 rgba(0,0,0,.06);-moz-box-shadow:0 6px 18px 0 rgba(0,0,0,.06);box-shadow:0 6px 18px 0 rgba(0,0,0,.06);">
                 <tr>
                   <td style="height:40px;">&nbsp;</td>
                 </tr>
                 <tr>
                   <td style="padding:0 35px;">
-                    <h1 style="color:#1e1e2d; font-weight:500; margin:0;font-size:32px;font-family:'Rubik',sans-serif;">
+                    <h1 style="color:#1e1e2d; font-weight:500; text-align:center; margin:0;font-size:32px;font-family:'Rubik',sans-serif;">
                       Contato</h1>
                     <span
                       style="display:inline-block; vertical-align:middle; margin:29px 0 26px; border-bottom:1px solid #cecece; width:100px;"></span>
@@ -58,19 +58,19 @@ export const templateEmail = ({ name, email, phone, subject, message }: EmailPro
                      Data de envio: ${new Date().toLocaleString("pt-BR", { timeZone: "America/Sao_Paulo", })}
                     </p>
                     <p style="color:#455056; font-size:15px;line-height:24px; margin:0;">
-                     Nome: ${name}
+                     <b>Nome</b>: ${name}
                     </p>
                     <p style="color:#455056; font-size:15px;line-height:24px; margin:0;">
-                     E-mail: ${email}
+                     <b>E-mail:</b> ${email}
                     </p>
                     <p style="color:#455056; font-size:15px;line-height:24px; margin:0;">
-                     Telefone: ${phone}
+                    <b>Telefone:</b> ${phone}
                     </p>
                     <p style="color:#455056; font-size:15px;line-height:24px; margin:0;">
-                     Assunto: ${subject}
+                    <b>Assunto:</b> ${subject}
                     </p>
                     <p style="color:#455056; font-size:15px;line-height:24px; margin:0;">
-                     Mensagem: ${message}
+                    <b>Mensagem:</b> ${message}
                     </p>
                     
                   </td>

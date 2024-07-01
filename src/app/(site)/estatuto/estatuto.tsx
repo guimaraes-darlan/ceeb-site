@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 import TitlePage from "../../../components/title-page";
 
@@ -25,10 +25,10 @@ export default function EstatutoPage() {
         <p style={{ display: "flex", justifyContent: "center" }}>
           <strong>ESTATUTO DA CASA ESPÍRITA EURÍPEDES BARSANULPHO</strong>
         </p>
-        <p style={{ display: "flex", justifyContent: "center" }}>
+        <p style={{ display: "flex" }}>
           <strong>CAPÍTULO I</strong>
         </p>
-        <p style={{ display: "flex", justifyContent: "center" }}>
+        <p style={{ display: "flex" }}>
           <strong>Da Denominação, Duração, Fins e Sede</strong>
         </p>
         <p>

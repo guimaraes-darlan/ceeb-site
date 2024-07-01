@@ -57,17 +57,13 @@ function Navbar() {
           open={open}
           onClose={handleClose}
         >
-          <MenuItem onClick={handleClose}>
-            <Link style={styleLinkItem} href="/estatuto">
-              Estatuto
-            </Link>
-          </MenuItem>
+          <Link style={styleLinkItem} href="/estatuto">
+            <MenuItem onClick={handleClose}>Estatuto</MenuItem>
+          </Link>
           <Divider />
-          <MenuItem onClick={handleClose}>
-            <Link style={styleLinkItem} href="/diretoria">
-              Diretoria
-            </Link>
-          </MenuItem>
+          <Link style={styleLinkItem} href="/diretoria">
+            <MenuItem onClick={handleClose}>Diretoria</MenuItem>
+          </Link>
         </Menu>
         <Button
           key="home"
@@ -89,58 +85,62 @@ function Navbar() {
           open={open2}
           onClose={handleClose2}
         >
-          <MenuItem onClick={handleClose2}>
-            <Link style={styleLinkItem} href="/escala-exposicoes">
+          <Link style={styleLinkItem} href="/escala-exposicoes">
+            <MenuItem onClick={handleClose2}>
               Escala de Exposições Doutrinárias
-            </Link>
-          </MenuItem>
+            </MenuItem>
+          </Link>
           <Divider />
-          <MenuItem onClick={handleClose2}>
-            <Link style={styleLinkItem} href="/atendimento-fraterno">
-              Atendimento Fraterno
-            </Link>
-          </MenuItem>
+          <Link style={styleLinkItem} href="/atendimento-fraterno">
+            <MenuItem onClick={handleClose2}>Atendimento Fraterno</MenuItem>
+          </Link>
           <Divider />
-          <MenuItem onClick={handleClose2}>
-            <Link style={styleLinkItem} href="/estudo">
+          <Link style={styleLinkItem} href="/estudo">
+            <MenuItem onClick={handleClose2}>
               Estudo da Doutrina Espírita
-            </Link>
-          </MenuItem>
+            </MenuItem>
+          </Link>
           <Divider />
-          <MenuItem onClick={handleClose2}>
-            <Link style={styleLinkItem} href="/cirurgias">
-              Cirurgias Espirituais
-            </Link>
-          </MenuItem>
+          <Link style={styleLinkItem} href="/cirurgias">
+            <MenuItem onClick={handleClose2}>Cirurgias Espirituais</MenuItem>
+          </Link>
           <Divider />
-          <MenuItem onClick={handleClose2}>
-            <Link style={styleLinkItem} href="/desobsessao">
+          <Link style={styleLinkItem} href="/equilibrio">
+            <MenuItem onClick={handleClose2}>Equilíbrio Espiritual</MenuItem>
+          </Link>
+          <Divider />
+          <Link style={styleLinkItem} href="/desobsessao">
+            <MenuItem onClick={handleClose2}>
               Tratamento de Desobsessão
-            </Link>
-          </MenuItem>
+            </MenuItem>
+          </Link>
           <Divider />
-          <MenuItem onClick={handleClose2}>
-            <Link style={styleLinkItem} href="/evangelizacao">
-              Evangelização
-            </Link>
-          </MenuItem>
+          <Link style={styleLinkItem} href="/evangelizacao">
+            <MenuItem onClick={handleClose2}>Evangelização</MenuItem>
+          </Link>
           <Divider />
-          <MenuItem onClick={handleClose2}>
-            <Link style={styleLinkItem} href="/biblioteca">
-              Biblioteca
-            </Link>
-          </MenuItem>
+          <Link style={styleLinkItem} href="/irradiacao">
+            <MenuItem onClick={handleClose2}>Irradiação</MenuItem>
+          </Link>
+          <Divider />
+          <Link style={styleLinkItem} href="/biblioteca">
+            <MenuItem onClick={handleClose2}>Biblioteca</MenuItem>
+          </Link>
+          <Divider />
+          <Link style={styleLinkItem} href="/campanhas">
+            <MenuItem onClick={handleClose2}>Campanhas</MenuItem>
+          </Link>
         </Menu>
-        <Button key="home" sx={{ my: 2, color: "white", display: "block" }}>
-          <Link style={styleLink} href="/horarios">
+        <Link style={styleLink} href="/horarios">
+          <Button key="home" sx={{ my: 2, color: "white", display: "block" }}>
             Horários
-          </Link>
-        </Button>
-        <Button key="home" sx={{ my: 2, color: "white", display: "block" }}>
-          <Link style={styleLink} href="/contato">
+          </Button>
+        </Link>
+        <Link style={styleLink} href="/contato">
+          <Button key="home" sx={{ my: 2, color: "white", display: "block" }}>
             Contato
-          </Link>
-        </Button>
+          </Button>
+        </Link>
       </Box>
     </Container>
   );

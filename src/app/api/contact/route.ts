@@ -13,7 +13,7 @@ export async function POST(request: Request) {
   });
 
   const mailProps: SendMailProps = {
-    to: 'darlanibira@gmail.com',
+    to: 'ceeuripedesbarsanulphosj@gmail.com',
     subject: `CEEB - Contato - ${formData.subject}`,
     data: {
       html,
