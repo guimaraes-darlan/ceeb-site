@@ -8,8 +8,8 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       // You can specify which fields should be submitted, by adding keys to the `credentials` object.
       // e.g. domain, username, password, 2FA token, etc.
       credentials: {
-        username: { label: "Username", type: "text", placeholder: "username" },
-        password: { label: "Password", type: "password" }
+        username: { label: "Email", type: "text" },
+        password: { label: "Senha", type: "password" }
       },
       authorize: async (credentials) => {
         const { username, password } = credentials as {
@@ -28,6 +28,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
           return user;
 
         } catch (error) {
+          console.log(error)
           throw error;
         }
       },

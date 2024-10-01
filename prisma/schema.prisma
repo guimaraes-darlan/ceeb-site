@@ -94,3 +94,21 @@ model readers {
   sync       Boolean   @default(false)
   Lending    Lending[]
 }
+
+model Speaker {
+  id              String            @id
+  name            String
+  house           String
+  created_at      DateTime          @default(now())
+  updated_at      DateTime
+  LectureCalendar LectureCalendar[]
+}
+
+model LectureCalendar {
+  id         String   @id
+  speakerId  String   @map(name: "speaker_id")
+  speaker    Speaker  @relation(fields: [speakerId], references: [id])
+  date       DateTime
+  created_at DateTime @default(now())
+  updated_at DateTime
+}

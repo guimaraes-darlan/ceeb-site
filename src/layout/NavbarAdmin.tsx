@@ -17,6 +17,8 @@ const menuLinks: MenuLinkProps[] = [
   { label: "Leitores", link: "/reader" },
   { label: "Categorias", link: "/categories" },
   { label: "Anotações", link: "/notes" },
+  { label: "Escala de Exposições", link: "/lectureCalendar" },
+  { label: "Palestrantes", link: "/speakers" },
   { label: "Sair", link: "/#" },
 ];
 
