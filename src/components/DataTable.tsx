@@ -1,9 +1,11 @@
+"use client";
+
 import {
   CSSProperties,
   ChangeEvent,
-  Dispatch,
   MouseEvent,
   ReactElement,
+  useState,
 } from "react";
 import { useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
@@ -21,6 +23,7 @@ import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 import LastPageIcon from "@mui/icons-material/LastPage";
 import { TableHead } from "@mui/material";
+import { grey } from "@mui/material/colors";
 
 interface TablePaginationActionsProps {
   count: number;
@@ -35,8 +38,9 @@ export interface DataTableProps {
   totalRows: number;
   page: number;
   rowsPerPage: number;
-  setPage: Dispatch<number>;
-  setRowsPerPage: Dispatch<number>;
+  execute: (page: number, perPage: number) => void;
+  // setPage: Dispatch<number>;
+  // setRowsPerPage: Dispatch<number>;
 }
 
 export interface DataTableColumn {
@@ -133,38 +137,49 @@ export default function DataTable({
   page,
   rowsPerPage,
   totalRows,
-  setPage,
-  setRowsPerPage,
-}: DataTableProps) {
+  execute,
+}: // setPage,
+// setRowsPerPage,
+DataTableProps) {
   const theme = useTheme();
   // Avoid a layout jump when reaching the last page with empty rows.
+  const [actualPage, setActualPage] = useState(page);
+  const [perPage, setPerPage] = useState(rowsPerPage);
+
   const emptyRows =
-    page > 0 ? Math.max(0, (1 + page) * rowsPerPage - totalRows) : 0;
+    actualPage > 0
+      ? Math.max(0, (1 + actualPage) * rowsPerPage - totalRows)
+      : 0;
 
   const handleChangePage = (
     event: MouseEvent<HTMLButtonElement> | null,
     newPage: number
   ) => {
-    setPage(newPage);
+    setActualPage(newPage);
+    execute(newPage, perPage);
   };
 
   const handleChangeRowsPerPage = (
     event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    setRowsPerPage(parseInt(event.target.value, 10));
-    setPage(0);
+    const perPage = +event.target.value;
+    setPerPage(perPage);
+    execute(actualPage, perPage);
   };
 
   return (
     <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 500 }} aria-label="table of data">
-        <TableHead sx={{ backgroundColor: theme.palette.primary.light }}>
+      <Table sx={{ minWidth: 500 }} aria-label="table" size="small">
+        <TableHead sx={{ backgroundColor: grey, height: "60px" }}>
           <TableRow>
             {columns.map((column) => (
               <TableCell
                 key={column.label}
                 align={column.align}
-                style={{ minWidth: column.minWidth }}
+                style={{
+                  minWidth: column.minWidth,
+                  fontWeight: "bold",
+                }}
               >
                 {column.label}
               </TableCell>
@@ -185,20 +200,21 @@ export default function DataTable({
               ))}
             </TableRow>
           ))}
-          {emptyRows > 0 && (
+          {/* {emptyRows > 0 && (
             <TableRow style={{ height: 53 * emptyRows }}>
               <TableCell colSpan={6} />
             </TableRow>
-          )}
+          )} */}
         </TableBody>
         <TableFooter>
           <TableRow>
             <TablePagination
-              rowsPerPageOptions={[5, 10, 25, { label: "All", value: -1 }]}
+              rowsPerPageOptions={[5, 10, 25]}
+              labelRowsPerPage={"Quantidade por página"}
               colSpan={3}
               count={totalRows}
-              rowsPerPage={rowsPerPage}
-              page={page}
+              rowsPerPage={perPage}
+              page={actualPage}
               SelectProps={{
                 inputProps: {
                   "aria-label": "quantidade por página",

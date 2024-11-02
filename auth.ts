@@ -24,7 +24,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
             throw new Error(data.message);
           }
           const user = data.user;
-          user.token = data.accessToken;
+          user.token = data.token;
           return user;
 
         } catch (error) {

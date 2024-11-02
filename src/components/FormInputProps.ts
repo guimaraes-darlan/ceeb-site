@@ -1,3 +1,5 @@
+import { DateView } from "@mui/x-date-pickers";
+
 export interface SelectOptionProps {
   label: string;
   value: string | number;
@@ -13,4 +15,6 @@ export interface FormInputProps {
   options?: JSX.Element[];
   number?: boolean;
   type?: string;
+  defaultValue?: string;
+  views?: DateView[];
 }

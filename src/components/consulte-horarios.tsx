@@ -3,6 +3,7 @@
 import { AccessTime } from "@mui/icons-material";
 import { Button, Container, Typography } from "@mui/material";
 import Link from "next/link";
+import React from "react";
 
 export default function ConsulteHorarios() {
   return (

@@ -1,114 +1,120 @@
 generator client {
-  provider = "prisma-client-js"
+  provider        = "prisma-client-js"
+  previewFeatures = ["postgresqlExtensions"]
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider   = "postgresql"
+  url        = env("DATABASE_URL")
+  extensions = [citext]
 }
 
 model Category {
-  id         String    @id
-  name       String
-  created_at DateTime  @default(now())
-  updated_at DateTime
-  sync       Boolean   @default(false)
-  Invoice    Invoice[]
-}
+  id            String    @id @default(uuid()) @db.Uuid
+  name          String    @db.Citext
+  price         Float?
+  quantity      Int?
+  fixedQuantity Boolean   @map(name: "fixed_quantity")
+  fixedPrice    Boolean   @map(name: "fixed_price")
+  createdAt     DateTime  @default(now()) @map(name: "created_at")
+  updatedAt     DateTime  @updatedAt @map(name: "updated_at")
+  Invoices      Invoice[]
 
-model Configuration {
-  id           String   @id
-  penaltyValue Decimal
-  lendingDays  Int
-  created_at   DateTime @default(now())
-  updated_at   DateTime
+  @@map("categories")
 }
 
 model Invoice {
-  id          String   @id
+  id          String   @id @default(uuid()) @db.Uuid
   date        DateTime
-  quantity    Decimal
+  quantity    Int
+  price       Decimal
   value       Decimal
   credit      Boolean  @default(false)
-  paymentType String
-  categoryId  String
-  lendingId   String?
-  created_at  DateTime @default(now())
-  updated_at  DateTime
-  sync        Boolean  @default(false)
-  Category    Category @relation(fields: [categoryId], references: [id])
-  Lending     Lending? @relation(fields: [lendingId], references: [id])
+  paymentType String   @map(name: "payment_type")
+  categoryId  String   @map(name: "category_id") @db.Uuid
+  category    Category @relation(fields: [categoryId], references: [id])
+  createdAt   DateTime @default(now()) @map(name: "created_at")
+  updatedAt   DateTime @updatedAt @map(name: "updated_at")
+
+  @@map("invoices")
 }
 
 model Lending {
-  id           String    @id
-  bookId       String
-  readerId     String
-  date         DateTime
-  expectedDate DateTime
-  deliveryDate DateTime?
-  code         String?
+  id           String    @id @default(uuid()) @db.Uuid
+  bookId       String    @map(name: "book_id") @db.Uuid
+  book         Book      @relation(fields: [bookId], references: [id])
+  readerId     String    @map(name: "reader_id") @db.Uuid
+  reader       Reader    @relation(fields: [readerId], references: [id])
+  date         DateTime  @db.Date
+  expectedDate DateTime  @map(name: "expected_date") @db.Date
+  deliveryDate DateTime? @map(name: "delivery_date") @db.Date
   returned     Boolean   @default(false)
-  created_at   DateTime  @default(now())
-  updated_at   DateTime
-  sync         Boolean   @default(false)
-  Invoice      Invoice[]
-  books        books     @relation(fields: [bookId], references: [id])
-  readers      readers   @relation(fields: [readerId], references: [id])
+  createdAt    DateTime  @default(now()) @map(name: "created_at")
+  updatedAt    DateTime  @updatedAt @map(name: "updated_at")
+
+  @@map("lendings")
 }
 
 model User {
-  id         String   @id
-  name       String
-  username   String
-  email      String
-  password   String
-  created_at DateTime @default(now())
-  updated_at DateTime
+  id        String   @id @default(uuid()) @db.Uuid
+  name      String
+  username  String
+  email     String
+  password  String
+  createdAt DateTime @default(now()) @map(name: "created_at")
+  updatedAt DateTime @updatedAt @map(name: "updated_at")
+
+  @@map("users")
 }
 
-model books {
-  id         String    @id
-  name       String
-  author     String
-  writer     String?
-  code       String
-  borrow     Boolean   @default(false)
-  created_at DateTime  @default(now())
-  updated_at DateTime
-  edition    String?
-  sync       Boolean   @default(false)
-  Lending    Lending[]
+model Book {
+  id        String    @id @default(uuid()) @db.Uuid
+  name      String    @db.Citext
+  author    String    @db.Citext
+  writer    String?
+  code      String
+  borrow    Boolean   @default(false)
+  edition   String?
+  createdAt DateTime  @default(now()) @map(name: "created_at")
+  updatedAt DateTime  @updatedAt @map(name: "updated_at")
+  Lending   Lending[]
+
+  @@map("books")
 }
 
-model readers {
-  id         String    @id
-  name       String
-  phone      String?
-  address    String?
-  city       String?
-  openLoan   Boolean   @default(false)
-  created_at DateTime  @default(now())
-  updated_at DateTime
-  email      String?
-  sync       Boolean   @default(false)
-  Lending    Lending[]
+model Reader {
+  id        String    @id @default(uuid()) @db.Uuid
+  name      String    @db.Citext
+  phone     String
+  address   String?
+  city      String?
+  email     String?
+  openLoan  Boolean   @default(false) @map(name: "open_loan")
+  createdAt DateTime  @default(now()) @map(name: "created_at")
+  updatedAt DateTime  @updatedAt @map(name: "updated_at")
+  Lending   Lending[]
+
+  @@map("readers")
 }
 
 model Speaker {
-  id              String            @id
-  name            String
-  house           String
-  created_at      DateTime          @default(now())
-  updated_at      DateTime
+  id              String            @id @default(uuid()) @db.Uuid
+  name            String            @db.Citext
+  house           String            @db.Citext
+  createdAt       DateTime          @default(now()) @map(name: "created_at")
+  updatedAt       DateTime          @updatedAt @map(name: "updated_at")
   LectureCalendar LectureCalendar[]
+
+  @@map("speakers")
 }
 
 model LectureCalendar {
-  id         String   @id
-  speakerId  String   @map(name: "speaker_id")
-  speaker    Speaker  @relation(fields: [speakerId], references: [id])
-  date       DateTime
-  created_at DateTime @default(now())
-  updated_at DateTime
+  id        String   @id @default(uuid()) @db.Uuid
+  speakerId String   @map(name: "speaker_id") @db.Uuid
+  speaker   Speaker  @relation(fields: [speakerId], references: [id])
+  date      DateTime
+  createdAt DateTime @default(now()) @map(name: "created_at")
+  updatedAt DateTime @updatedAt @map(name: "updated_at")
+
+  @@map("lecture_calendar")
 }

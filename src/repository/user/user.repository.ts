@@ -1,6 +1,5 @@
 import prisma from '../../lib/prisma';
 import * as bcrypt from 'bcrypt';
-import { v4 as uuidv4 } from 'uuid';
 import { UserModel } from '../../models/user';
 
 export const userLogin = async (email: string, password: string) => {
@@ -41,10 +40,7 @@ export const saveUser = async (user: UserModel) => {
     await prisma.user.create({
       data: {
         ...user,
-        id: uuidv4(),
         password: hash,
-        created_at: new Date(),
-        updated_at: new Date(),
       }
     });
   } catch (error) {

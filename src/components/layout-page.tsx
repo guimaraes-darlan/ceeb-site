@@ -8,6 +8,7 @@ import { Menu } from "@mui/icons-material";
 import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
 import MenuDrawer from "./menu-drawer";
+import React from "react";
 
 const cookie = localFont({
   src: "../app/cookie.ttf",

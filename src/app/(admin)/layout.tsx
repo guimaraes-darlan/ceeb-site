@@ -7,11 +7,17 @@ import Footer from "../../layout/Footer";
 import NavbarAdmin from "../../layout/NavbarAdmin";
 import { auth } from "../../../auth";
 import Restricted from "./restricted";
+import { Metadata } from "next";
 
 const cookie = localFont({
   src: "../cookie.ttf",
   display: "swap",
 });
+
+export const metadata: Metadata = {
+  title: "CEEB",
+  description: "Casa Espírita Eurípedes Barsanulpho",
+};
 
 export default async function AdminLayout({
   children,
