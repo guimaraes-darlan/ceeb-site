@@ -28,13 +28,17 @@ export const GET = auth(async function GET(request) {
   const rows: InvoiceType[] = await prisma.$queryRawUnsafe(`select i.id, i.date, i.quantity, i.price, i.value, i.payment_type, c.name
     from invoices i
     inner join categories c on c.id=i.category_id
-    where date_part('year', lc.date) = ${year} and date_part('month', lc.date) = ${month}
+    where date_part('year', i.date) = ${year} and date_part('month', i.date) = ${month}
     order by i.date asc`);
 
   const file = await generateExcel(rows);
 
-
-  return Response.json({ data: "" });
+  return new Response(file, {
+    headers: {
+      "Content-type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "Content-Disposition": "attachment; filename=data.xlsx"
+    }
+  });
 });
 
 async function generateExcel(invoices: InvoiceType[]) {
@@ -53,7 +57,9 @@ async function generateExcel(invoices: InvoiceType[]) {
   for (const invoice of invoices) {
     sheet.addRow({
       ...invoice,
-      date: dayjs(invoice.date).format('DD/MM/YYYY')
+      date: dayjs(invoice.date).format('DD/MM/YYYY'),
+      price: parseFloat(invoice.price.toFixed(2)),
+      value: parseFloat(invoice.value.toFixed(2)),
     });
   }
 

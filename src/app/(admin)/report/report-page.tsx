@@ -12,6 +12,7 @@ import { Download } from "@mui/icons-material";
 import Loading from "../../../components/Loading";
 import ModalInfo from "../../../components/modal-info";
 import { useModal } from "../../../components/hooks/useModal";
+import { generateReport } from "../../../service/report/generateReport";
 
 dayjs.extend(utc);
 dayjs.extend(timezone);
@@ -30,7 +31,23 @@ export default function ReportPage() {
     typeModal,
   } = useModal();
 
-  const generateReport = async () => {};
+  const handleReport = async () => {
+    setShowLoading(true);
+
+    if (date) {
+      const response = await generateReport(date.month(), date.year());
+      const data = await response.blob();
+
+      const url = URL.createObjectURL(data);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `relatorio-contas_${dayjs().format(
+        "DD/MM/YYYY_HH:mm:ss"
+      )}.xlsx`;
+      a.click();
+    }
+    setShowLoading(false);
+  };
 
   return (
     <>
@@ -60,7 +77,11 @@ export default function ReportPage() {
             />
           </Grid>
           <Grid item xs={12}>
-            <Button variant="contained" startIcon={<Download />}>
+            <Button
+              variant="contained"
+              startIcon={<Download />}
+              onClick={handleReport}
+            >
               Gerar Relatório
             </Button>
           </Grid>
