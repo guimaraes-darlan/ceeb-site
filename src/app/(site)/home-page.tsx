@@ -35,23 +35,7 @@ export default function HomePage() {
           as nossas atividades e horários de funcionamento e seja muito
           bem-vindo
         </Typography>
-        <Container sx={{ height: "2rem" }} />
-        <Container
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            paddingTop: "1rem",
-          }}
-        >
-          <Link href="/campanhas">
-            <Link
-              style={{ textDecoration: "none", color: "#4169E1" }}
-              href="/campanhas"
-            >
-              <Typography variant="h6">Campanhas</Typography>
-            </Link>
-          </Link>
-        </Container>
+
         <Container sx={{ height: "2rem" }} />
         <Grid container spacing={1}>
           <Grid item xs={12} sm={6} md={6}>
