@@ -22,10 +22,10 @@ const schema = z.object({
 });
 
 export async function POST(request: Request) {
-  // const session = await auth();
-  // if (!session) {
-  //   return Response.json({ message: 'Não autenticado' }, { status: 401 });
-  // }
+  const session = await auth();
+  if (!session) {
+    return Response.json({ message: 'Não autenticado' }, { status: 401 });
+  }
 
   try {
     const body = await request.json();

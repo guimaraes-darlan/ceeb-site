@@ -23,8 +23,6 @@ export async function POST(request: Request) {
     const user: UserType = await userLogin(email, password);
     const token = generateToken(user);
 
-    // console.log(jwt.verify(token, process.env.JWT_SECRET || 'pass'))
-
     return Response.json({ msg: 'ok', user, token });
 
   } catch (error) {

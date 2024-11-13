@@ -169,7 +169,7 @@ export default function HorariosPage() {
           </Grid>
           <Grid xs={8} borderTop={1} borderBottom={1} borderRight={1}>
             <Typography align="center">
-              Após as palestras doutrinárias
+              Quintas e Sábados, após as palestras doutrinárias
             </Typography>
           </Grid>
 

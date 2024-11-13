@@ -1,5 +1,5 @@
 import { getInvoice, insertInvoiceMobile, listInvoicesToMobile, updateInvoiceMobile } from "../../../../repository/invoice/invoice.repository";
-import { InvoiceMobile, InvoiceRemote } from "../mobile/types";
+import { InvoiceRemote } from "../mobile/types";
 import { validateToken } from "../util/validateToken";
 
 export async function GET(request: Request) {
@@ -38,8 +38,7 @@ export async function POST(request: Request) {
   let updated = 0;
   const registers = [];
 
-  for (const data of invoices) {
-    const invoice = JSON.parse(data);
+  for (const invoice of invoices) {
     if (invoice.remote_id) {
       const invoiceRemote = await getInvoice(invoice.remote_id);
       if (invoiceRemote) {
@@ -61,5 +60,13 @@ export async function POST(request: Request) {
     }
   }
 
-  return Response.json({ created, updated, data: registers });
+  return Response.json({
+    created, updated, data: registers.map((r) => {
+      return {
+        ...r,
+        price: r.price.toNumber(),
+        value: r.value.toNumber(),
+      }
+    })
+  });
 }

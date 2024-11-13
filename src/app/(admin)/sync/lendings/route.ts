@@ -1,5 +1,5 @@
 import { getLending, insertLendingMobile, listLendingToMobile, updateLendingMobile } from "../../../../repository/lending/lending.repository";
-import { LendingMobile, LendingRemote } from "../mobile/types";
+import { LendingRemote } from "../mobile/types";
 import { validateToken } from "../util/validateToken";
 
 export async function GET(request: Request) {
@@ -30,8 +30,7 @@ export async function POST(request: Request) {
   let updated = 0;
   const registers = [];
 
-  for (const data of lendings) {
-    const lending = JSON.parse(data);
+  for (const lending of lendings) {
     if (lending.remote_id) {
       const lendingRemote = await getLending(lending.remote_id);
       if (lendingRemote) {

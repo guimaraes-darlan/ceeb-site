@@ -1,27 +1,10 @@
 "use client";
-import {
-  Box,
-  Button,
-  Container,
-  CssBaseline,
-  TextField,
-  Typography,
-} from "@mui/material";
+import { Box, Button, Container, CssBaseline, Typography } from "@mui/material";
 import { signIn } from "next-auth/react";
-import { ChangeEvent, FormEvent, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { FormInputText } from "../../../components/FormInputText";
-
-type LoginInput = {
-  username: string;
-  password: string;
-};
-
-type PageProps = {
-  searchParams: { error?: string };
-};
 
 const loginSchema = z.object({
   username: z
@@ -33,8 +16,8 @@ const loginSchema = z.object({
 
 type LoginProps = z.infer<typeof loginSchema>;
 
-export default function LoginPage({ searchParams }: PageProps) {
-  const { register, handleSubmit, control } = useForm<LoginProps>({
+export default function LoginPage() {
+  const { handleSubmit, control } = useForm<LoginProps>({
     resolver: zodResolver(loginSchema),
   });
 

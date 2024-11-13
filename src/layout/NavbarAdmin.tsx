@@ -3,7 +3,7 @@
 import Container from "@mui/material/Container";
 import Link from "next/link";
 import { List, ListItem, ListItemButton, ListItemText } from "@mui/material";
-import { signOut } from "../../auth";
+import { signOut } from "next-auth/react";
 
 type MenuLinkProps = {
   label: string;
@@ -12,7 +12,7 @@ type MenuLinkProps = {
 
 const menuLinks: MenuLinkProps[] = [
   { label: "Home", link: "/admin" },
-  { label: "Contas", link: "/invoice" },
+  // { label: "Contas", link: "/invoice" },
   { label: "Relatório", link: "/report" },
   // { label: "Empréstimos e Devoluções", link: "/lending" },
   // { label: "Livros", link: "/book" },

@@ -1,10 +1,11 @@
+import dayjs from 'dayjs';
 import { InvoiceMobile } from '../../app/(admin)/sync/mobile/types';
 import prisma from '../../lib/prisma';
 
 export async function insertInvoiceMobile(invoice: InvoiceMobile) {
   return await prisma.invoice.create({
     data: {
-      date: invoice.date,
+      date: dayjs(invoice.date).toDate(),
       paymentType: invoice.payment_type,
       price: invoice.price,
       quantity: invoice.quantity,
@@ -19,7 +20,7 @@ export async function updateInvoiceMobile(invoice: InvoiceMobile) {
   return await prisma.invoice.update({
     where: { id: invoice.remote_id! },
     data: {
-      date: invoice.date,
+      date: dayjs(invoice.date).toDate(),
       paymentType: invoice.payment_type,
       price: invoice.price,
       quantity: invoice.quantity,
