@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Container, Grid, Typography } from "@mui/material";
+import { Box, Container, Divider, Grid, Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -35,6 +35,27 @@ export default function HomePage() {
           as nossas atividades e horários de funcionamento e seja muito
           bem-vindo
         </Typography>
+        <Divider />
+        <Typography
+          align="center"
+          variant="h4"
+          fontWeight="bold"
+          sx={{ marginTop: "2rem", marginBottom: "1.5rem" }}
+        >
+          Estaremos em recesso no período de:
+        </Typography>
+        <Typography align="center" variant="h5" sx={{ marginBottom: "1.5rem" }}>
+          16 de Dezembro de 2024 a 26 de Janeiro de 2025
+        </Typography>
+        <Typography
+          align="center"
+          variant="h5"
+          fontWeight="bold"
+          sx={{ marginBottom: "1.5rem" }}
+        >
+          Retorno das Atividades: 27 de Janeiro de 2025
+        </Typography>
+        <Divider />
 
         <Container sx={{ height: "2rem" }} />
         <Grid container spacing={1}>
