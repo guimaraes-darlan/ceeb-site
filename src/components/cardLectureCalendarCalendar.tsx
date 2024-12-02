@@ -1,4 +1,4 @@
-import { Box, Divider, IconButton, Typography } from "@mui/material";
+import { Box, Divider, IconButton, Tooltip, Typography } from "@mui/material";
 import { LectureCalendarModel } from "../models/lectureCalendar";
 import { getDayOfWeek } from "../util/dateUtil";
 import dayjs from "dayjs";
@@ -6,9 +6,10 @@ import { Edit } from "@mui/icons-material";
 
 interface CardCalendarProps {
   lecture: LectureCalendarModel;
+  edit: (lecture: LectureCalendarModel) => Promise<void>;
 }
 
-export const CardLectureCalendar = ({ lecture }: CardCalendarProps) => {
+export const CardLectureCalendar = ({ lecture, edit }: CardCalendarProps) => {
   return (
     <Box
       display="flex"
@@ -52,9 +53,11 @@ export const CardLectureCalendar = ({ lecture }: CardCalendarProps) => {
         justifyContent="center"
         alignItems="center"
       >
-        <IconButton>
-          <Edit />
-        </IconButton>
+        <Tooltip title="Editar">
+          <IconButton onClick={() => edit(lecture)}>
+            <Edit />
+          </IconButton>
+        </Tooltip>
       </Box>
     </Box>
   );

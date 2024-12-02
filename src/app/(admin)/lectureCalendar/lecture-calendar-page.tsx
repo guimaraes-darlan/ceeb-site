@@ -107,6 +107,16 @@ export default function LectureCalendarPage({
     }
   };
 
+  const edit = async (lecture: LectureCalendarModel) => {
+    console.log("edit");
+    setExpandForm(true);
+    reset({
+      id: lecture.id!,
+      date: dayjs(lecture.date),
+      speakerId: lecture.speakerId,
+    });
+  };
+
   const { handleSubmit, control, reset } =
     useForm<LectureCalendarModalZodProps>({
       defaultValues,
@@ -214,7 +224,13 @@ export default function LectureCalendarPage({
           </Grid>
           <Grid item xs={12}>
             {lectureCalendars?.map((lecture) => {
-              return <CardLectureCalendar key={lecture.id} lecture={lecture} />;
+              return (
+                <CardLectureCalendar
+                  key={lecture.id}
+                  lecture={lecture}
+                  edit={edit}
+                />
+              );
             })}
           </Grid>
         </Grid>
