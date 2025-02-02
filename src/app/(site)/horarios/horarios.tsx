@@ -48,13 +48,36 @@ export default function HorariosPage() {
             <Container sx={{ display: "flex", flexDirection: "column" }}>
               <Typography align="center">Segundas-Feiras</Typography>
               <Typography align="center">Quintas-Feiras</Typography>
-              <Typography align="center">Sábados</Typography>
             </Container>
           </Grid>
           <Grid xs={4} border={1}>
             <Container sx={{ display: "flex", flexDirection: "column" }}>
               <Typography align="center">19:30</Typography>
               <Typography align="center">20:00</Typography>
+            </Container>
+          </Grid>
+          <Grid xs={12}>
+            <Container sx={{ height: "0.5rem" }} />
+          </Grid>
+          <Grid
+            xs={4}
+            sx={{
+              border: 1,
+              display: "flex",
+              alignItems: "center",
+
+              justifyContent: "center",
+            }}
+          >
+            <Typography>Estudo do Evangelho</Typography>
+          </Grid>
+          <Grid xs={4} borderTop={1} borderBottom={1}>
+            <Container sx={{ display: "flex", flexDirection: "column" }}>
+              <Typography align="center">Sábados</Typography>
+            </Container>
+          </Grid>
+          <Grid xs={4} border={1}>
+            <Container sx={{ display: "flex", flexDirection: "column" }}>
               <Typography align="center">19:00</Typography>
             </Container>
           </Grid>
@@ -77,14 +100,12 @@ export default function HorariosPage() {
             <Container sx={{ display: "flex", flexDirection: "column" }}>
               <Typography align="center">Segundas-Feiras</Typography>
               <Typography align="center">Quintas-Feiras</Typography>
-              <Typography align="center">Sábados</Typography>
             </Container>
           </Grid>
           <Grid xs={4} border={1}>
             <Container sx={{ display: "flex", flexDirection: "column" }}>
               <Typography align="center">20:30 - 21:30</Typography>
               <Typography align="center">21:00 - 22:00</Typography>
-              <Typography align="center">20:00 - 21:00</Typography>
             </Container>
           </Grid>
           <Grid xs={12}>
