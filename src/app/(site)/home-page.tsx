@@ -37,24 +37,6 @@ export default function HomePage() {
         </Typography>
 
         <Container sx={{ height: "2rem" }} />
-
-        <Box
-          sx={{
-            border: "2px solid #1976d2",
-            borderRadius: "8px",
-            padding: "1.5rem",
-            backgroundColor: "#f5faff",
-          }}
-        >
-          <Typography align="center" variant="h5" fontWeight="bold">
-            Estaremos em recesso entre os dias 14/12/2025 e 18/01/2026.
-          </Typography>
-          <Container sx={{ height: "1rem" }} />
-          <Typography align="center" variant="h5" fontWeight="bold">
-            Retorno das atividades em 19/01/2026.
-          </Typography>
-        </Box>
-        <Container sx={{ height: "2rem" }} />
         <Grid container spacing={1}>
           <Grid item xs={12} sm={6} md={6}>
             <Image

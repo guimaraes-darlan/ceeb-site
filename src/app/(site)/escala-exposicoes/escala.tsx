@@ -25,22 +25,6 @@ export default function EscalaPage({ lectures }: EscalaPageProps) {
           {getMonth(actualDate)} de {actualDate.getFullYear()}
         </strong>
       </Typography>
-      <Box
-        sx={{
-          border: "2px solid #1976d2",
-          borderRadius: "8px",
-          padding: "1.5rem",
-          backgroundColor: "#f5faff",
-        }}
-      >
-        <Typography align="center" variant="h5" fontWeight="bold">
-          Estaremos em recesso entre os dias 14/12/2025 e 18/01/2026.
-        </Typography>
-        <Container sx={{ height: "1rem" }} />
-        <Typography align="center" variant="h5" fontWeight="bold">
-          Retorno das atividades em 19/01/2026.
-        </Typography>
-      </Box>
       <Container sx={{ height: "2rem" }} />
       {lectures.map((lecture) => (
         <CardCalendar key={lecture.id} lecture={lecture} />
