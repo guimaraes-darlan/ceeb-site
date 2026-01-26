@@ -36,6 +36,29 @@ export default function HomePage() {
           bem-vindo
         </Typography>
 
+        <Box
+          sx={{
+            marginTop: "1rem",
+            marginBottom: "1rem",
+            textAlign: "center",
+            border: "1px solid #a9a9a9",
+            padding: "1rem",
+            backgroundColor: "#eeeded",
+          }}
+        >
+          <Typography variant="h6">
+            Estamos tristes pela partida de nosso grande amigo Nilson Cesar
+            Goes.
+          </Typography>
+          <Typography variant="h6">
+            Nossa casa tem muita gratidão a este grande trabalhador da seara do
+            Mestre.
+          </Typography>
+          <Typography variant="h6" fontWeight="bold" marginTop="0.5rem">
+            Obrigado Nilson
+          </Typography>
+        </Box>
+
         <Container sx={{ height: "2rem" }} />
         <Grid container spacing={1}>
           <Grid item xs={12} sm={6} md={6}>
